@@ -1,65 +1,79 @@
 #include <stdio.h>
-
+#include <stdlib.h>
+	void torreRec(){ //mover da torre
+	
+		for (int torre = 0; torre < 8; torre++)
+		{
+			printf("Direita!\n");
+		}
+		
+		
+	}
+	
+	void bispoRec(){ //mover do bispo 8 vezes
+		
+		for(int i = 0; i < 8; i++){ //loop externo movimento pra cima
+			printf("Cima, ");
+			
+			for(int j = 1; j > 0; j--){//loop interno movimento pra baixo
+				printf("Direita!\n");
+				
+			}
+		}		
+	}
+	
+	void rainhaRec(){ //movimento da rainha
+	
+		for( int rainha = 1; rainha <= 8; rainha++){ // mover 8 casas para a esquerda
+			printf("Esquerda!\n");
+		}
+		
+	}
+	
+	void cavaloRec(){	//mover do cavalo
+		for(int i = 0, j = 0; i < 2 ; i++, j++ ){ 
+			
+			printf("Cima, "); // mover pra cima 2 vezes
+			
+			j >= 1 ? printf("Direita! \n"): 0 ; // mover pra direita 1 vez
+			
+		}
+	}
 	//bispo 5 casas para a diagonal direita
 	//rainha 8 casas para esquerda
 	//torre 5 casa para direita
-	//Cavalo, 2 casas para baixo e 1 para esquerda
+	//Cavalo, 2 casas para cima e 1 para direita
+
 int main(){
-	
-		int torre, bispo, rainha, cavalo;
-	
-	bispo = 0;
-	rainha = 0;
-	cavalo = 0;
 	
 			//movimento da torre:
 			
 		printf(" Movimento da Torre:\n");	
-	for(torre = 0; torre < 5; torre++ )	//repete o printf em até 5 vezes.
-	{
-		printf(" Direita!\n");		
-	}
-	
+	torreRec();
+	printf("\n");
+		
+		
 			//movimento do bispo:
 			
-		printf("\n Movimento do Bispo!\n");	
-	do{
-		
-		printf(" Direita, cima!\n");
-		
-		bispo++;
-		
-	}while(bispo < 5);	//repete o printf em até 5 vezes.
+		printf("Movimento do Bispo!\n");	
 	
-			//movimento da Rainha:
-			
+	bispoRec();
+	printf("\n");
+	
+			//movimento da rainha
 		printf("\n Movimento da Rainha:\n"); 
-	while(rainha < 8){		//repete o printf em até 8 vezes.
-		
-		printf("Esquerda!\n");
-		
-		rainha++;
-	}
-			
+	
+	rainhaRec();
+	printf("\n");
+	
 			//movimento do cavalo:
 			
-		printf("\n Movimento do Cavalo:\n");
+		printf("Movimento do Cavalo:\n");
 	
-		int b; // baixo
-		int e; // esquerda
-	for(e = 1; e > 0; e--){ //loop externo
-		
-		b = 1;
-		
-		while(b <= 2){	//loop interno
-			
-			printf("Baixo, ");  // movimento do cavalo para baixo
-			b++; 
-		}
-		
-		printf("Esquerda!\n"); // movimento do cavalo para esquerda
-		
-	}
+	cavaloRec();
+	printf("\n");
+	
+
 	
  	return 0;	
 }
